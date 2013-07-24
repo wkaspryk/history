@@ -15,7 +15,7 @@
 			<head>
 				<meta charset="utf-8" />
 				<title>History - Photo Album</title>
-				<script src="../inc/js/jquery-1.7.2.min.js"></script>
+				<script src="../inc/js/jquery-1.10.2.min.js"></script>
 				<!-- Photo -->
 				<script src="../inc/js/jquery.colorbox-min.js"></script>
 				<link  href="../inc/css/colorbox.css" rel="stylesheet" media="screen" />
