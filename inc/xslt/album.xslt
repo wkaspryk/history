@@ -11,8 +11,7 @@
 		<xsl:value-of select="/album/album_meta/album_name"/>
 	</xsl:variable>
 	<xsl:template match="/">
-		<html>
-			<head>
+		<html><head>
 				<meta charset="utf-8" />
                 <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.css" />
                 <script src="http://cdn.leafletjs.com/leaflet-0.6.4/leaflet.js"></script>
@@ -67,6 +66,7 @@
 						border-width: 5px 5px 20px;
 					}
 					]]>
+					#map { height: 180px; }
 				</style>
 			</head>
 
@@ -85,7 +85,9 @@
 					</div>
 				</xsl:if>
 				<div style="clear: left;"></div>
-
+					
+                  <div id="map"></div>
+                    
 				<div id="divAlbum">
 					<ul>
 						<xsl:for-each select="album/photo|album/video">
@@ -216,6 +218,11 @@
 				</div>
 			</body>
 		</html>
+        <script>var map = L.map('map').setView([51.505, -0.09], 13);</script>
+        <script>L.tileLayer('http://{s}.tile.cloudmade.com/API-key/997/256/{z}/{x}/{y}.png', {
+    attribution: 'Map data copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://cloudmade.com">CloudMade</a>',
+    maxZoom: 18
+}).addTo(map);</script>
 	</xsl:template>
 
 </xsl:stylesheet>
